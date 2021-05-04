@@ -25,7 +25,7 @@
         </md-list-item>
       </md-list>
       <SocialLinks />
-      <small style="text-align: center; display:flex; justify-content: center;">Created by: &nbsp;<a href="https://heatherhtran.com/" style="margin-left: 4px;">
+      <small style="text-align: center; display:flex; justify-content: center; color: #a37f79;">Created by: &nbsp;<a href="https://heatherhtran.com/" style="margin-left: 4px; color: #997771;">
           Heather Tran</a></small>
     </md-card>
   </div>
@@ -90,6 +90,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+small,
+small. a {
+  color: #fec5bb;
+}
+
 .bottom {
   align-items: flex-end;
 }
