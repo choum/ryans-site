@@ -1,19 +1,10 @@
 <template>
-  <div id="app">
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=Lato:400,500,700,400italic|Material+Icons"
-    />
-    <Background />
-  </div>
+<div id="app">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,500,700,400italic|Material+Icons" />
+  <Background />
+</div>
 </template>
 
 <script>
@@ -54,18 +45,23 @@ export default {
   --isabelline: #f9f4f0;
   --plat: #edede8;
 }
+
 .md-app-container {
   overflow: visible !important;
 }
+
 .md-list-item-content {
   height: 60px !important;
 }
 
 ::selection {
-  background: #35251c !important; /* WebKit/Blink Browsers */
+  background: #35251c !important;
+  /* WebKit/Blink Browsers */
 }
+
 ::-moz-selection {
-  background: #35251c !important; /* Gecko Browsers */
+  background: #35251c !important;
+  /* Gecko Browsers */
 }
 
 html,

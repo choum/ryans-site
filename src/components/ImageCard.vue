@@ -1,33 +1,24 @@
 <template>
-  <div class="md-layout-item">
-    <md-card :class="{ largerCard: isJob }">
-      <md-card-media-cover>
-        <md-card-media :style="cssProps">
-          <img :src="src" :class="{ largerCard: isJob }" />
-        </md-card-media>
-        <md-card-area :class="{ largerCard: isJob }">
-          <md-card-header>
-            <p class="md-title">
-              {{ title }}
-            </p>
-            <span class="date" v-if="begin !== undefined && end !== undefined"
-              >{{ begin }} - {{ end }}</span
-            >
-            <md-button
-              :href="link"
-              v-if="isJob === false"
-              class="link"
-              :md-ripple="false"
-              @click.native="returnSummary()"
-              :project="title"
-            >
-              READ MORE
-            </md-button>
-          </md-card-header>
-        </md-card-area>
-      </md-card-media-cover>
-    </md-card>
-  </div>
+<div class="md-layout-item">
+  <md-card :class="{ largerCard: isJob }">
+    <md-card-media-cover>
+      <md-card-media :style="cssProps">
+        <img :src="src" :class="{ largerCard: isJob }" />
+      </md-card-media>
+      <md-card-area :class="{ largerCard: isJob }">
+        <md-card-header>
+          <p class="md-title">
+            {{ title }}
+          </p>
+          <span class="date" v-if="begin !== undefined && end !== undefined">{{ begin }} - {{ end }}</span>
+          <md-button :href="link" v-if="isJob === false" class="link" :md-ripple="false" @click.native="returnSummary()" :project="title">
+            READ MORE
+          </md-button>
+        </md-card-header>
+      </md-card-area>
+    </md-card-media-cover>
+  </md-card>
+</div>
 </template>
 
 <script>
@@ -61,17 +52,21 @@ export default {
   margin-top: 0px !important;
   text-align: center;
 }
+
 .md-card-header {
   width: 100%;
   padding-bottom: 8px;
   padding-top: 8px;
 }
+
 .md-body-1 {
   font-size: 16px;
 }
+
 img {
   object-fit: cover;
 }
+
 .md-card,
 img,
 .md-card-area {
@@ -99,7 +94,8 @@ img {
 
 .md-card-expand i {
   color: #fff !important;
-  font-size: 50px !important; /* Preferred icon size */
+  font-size: 50px !important;
+  /* Preferred icon size */
 }
 
 i {
@@ -109,19 +105,24 @@ i {
 .link {
   background-color: transparent !important;
 }
+
 .link:hover {
   background-color: transparent !important;
 }
+
 .md-card-media {
   background-color: var(--color);
 }
+
 .md-button-content {
   color: black !important;
 }
+
 .date {
   font-style: italic;
   text-align: center;
 }
+
 .md-card {
   margin-bottom: 1em;
 }

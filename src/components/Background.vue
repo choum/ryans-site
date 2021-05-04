@@ -1,10 +1,10 @@
 <template>
-  <div id="pageWrapper">
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <Content />
-  </div>
+<div id="pageWrapper">
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <Content />
+</div>
 </template>
 
 <script>
@@ -21,6 +21,7 @@ export default {
 #pageWrapper {
   padding-bottom: 3em;
 }
+
 html {
   height: 100%;
 }
@@ -70,6 +71,7 @@ h1 {
   0% {
     transform: translateX(-25%);
   }
+
   100% {
     transform: translateX(25%);
   }
