@@ -54,9 +54,11 @@ export default {
 }
 
 .md-card-header {
+  display: flex;
   width: 100%;
   padding-bottom: 8px;
   padding-top: 8px;
+  align-items: center;
 }
 
 .md-body-1 {
@@ -104,6 +106,8 @@ i {
 
 .link {
   background-color: transparent !important;
+  border: none;
+  width: 50%;
 }
 
 .link:hover {
