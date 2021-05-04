@@ -5,30 +5,33 @@
       <div class="join md-layout-item  md-layout md-gutter">
         <div class="md-layout-item  md-size-40 md-small-size-100 img">
           <ImageCard
-            :title="jpl.title"
-            :src="jpl.src"
-            :isJob="jpl.isJob"
-            :begin="jpl.begin"
-            :end="jpl.end"
+            :title="work.jpl.title"
+            :src="work.jpl.src"
+            :isJob="work.jpl.isJob"
+            :begin="work.jpl.begin"
+            :end="work.jpl.end"
           />
         </div>
         <div class="md-layout-item txt">
-          <TextCard :content="jpl.content" :position="jpl.position" />
+          <TextCard :content="work.jpl.content" :position="work.jpl.position" />
         </div>
       </div>
     </div>
     <div class="md-layout md-gutter md-alignment-center">
       <div class="join md-layout-item  md-layout md-gutter reverse">
         <div class="md-layout-item txt">
-          <TextCard :content="cpp1.content" :position="cpp1.position" />
+          <TextCard
+            :content="work.cpp1.content"
+            :position="work.cpp1.position"
+          />
         </div>
         <div class="md-layout-item md-size-40 md-small-size-100 img">
           <ImageCard
-            :title="cpp1.title"
-            :src="cpp1.src"
-            :isJob="cpp1.isJob"
-            :begin="cpp1.begin"
-            :end="cpp1.end"
+            :title="work.cpp1.title"
+            :src="work.cpp1.src"
+            :isJob="work.cpp1.isJob"
+            :begin="work.cpp1.begin"
+            :end="work.cpp1.end"
           />
         </div>
       </div>
@@ -37,30 +40,33 @@
       <div class="join md-layout-item  md-layout md-gutter">
         <div class="md-layout-item md-size-40 md-small-size-100 img">
           <ImageCard
-            :title="cpp2.title"
-            :src="cpp2.src"
-            :isJob="cpp2.isJob"
-            :begin="cpp2.begin"
-            :end="cpp2.end"
+            :title="work.cpp2.title"
+            :src="work.cpp2.src"
+            :isJob="work.cpp2.isJob"
+            :begin="work.cpp2.begin"
+            :end="work.cpp2.end"
           />
         </div>
         <div class="md-layout-item txt">
-          <TextCard :content="cpp2.content" :position="cpp2.position" />
+          <TextCard
+            :content="work.cpp2.content"
+            :position="work.cpp2.position"
+          />
         </div>
       </div>
     </div>
     <div class="md-layout md-gutter md-alignment-center">
       <div class="join md-layout-item  md-layout md-gutter reverse">
         <div class="md-layout-item txt">
-          <TextCard :content="bar.content" :position="bar.position" />
+          <TextCard :content="work.bar.content" :position="work.bar.position" />
         </div>
         <div class="md-layout-item  md-size-40 md-small-size-100 img">
           <ImageCard
-            :title="bar.title"
-            :src="bar.src"
-            :isJob="bar.isJob"
-            :begin="bar.begin"
-            :end="bar.end"
+            :title="work.bar.title"
+            :src="work.bar.src"
+            :isJob="work.bar.isJob"
+            :begin="work.bar.begin"
+            :end="work.bar.end"
           />
         </div>
       </div>
@@ -75,53 +81,14 @@ import TextCard from "./TextCard.vue";
 import VueMaterial from "vue-material";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
-
+import work from "../json/work-history.json";
 Vue.use(VueMaterial);
 export default {
   name: "WorkRow",
   components: { TitleCard, ImageCard, TextCard },
   data() {
     return {
-      jpl: {
-        title: "Jet Propulsion Laboratory",
-        position: "Electronics Intern",
-        src: require("../assets/jpl.jpg"),
-        isJob: true,
-        begin: "May 2019",
-        end: "Present",
-        content:
-          "Working on embedded software for the Polar Radiant Energy in the Far InfraRed Experiment (PREFIRE) CubeSat. Wrote embedded divers for interfacing with hardware SPI and UART modules on the Vorago VA10820. Wrote a C library for building, sending, receiving, and decoding CCSDS Space Protocol Packets in an ARM mcu. Writing a Python library for dynamically encoding, decoding, and handling CCSDS Space Protocol Packets. Assisting with the development of an ARM based stepper motor driver for optics on the PREFIRE CubeSat."
-      },
-      cpp1: {
-        title: "Cal Poly Pomona Client Services",
-        position: "Desktop Support Student Assistant",
-        src: require("../assets/cpp1.jpeg"),
-        begin: "July 2017",
-        end: "June 2019",
-        isJob: true,
-        content:
-          "Assisted desktop support technicians in maintaining state equipment and working with users to resolve issues. Managed a support incident and request ticket queue and worked independently to resolve issues. Lead and supported the implementation of Teamviewer for providing remote assistance to our users."
-      },
-      cpp2: {
-        title: "Cal Poly Pomona Client Services",
-        position: "Classroom Technology Student Assistant",
-        src: require("../assets/cpp2.jpg"),
-        begin: "February 2017",
-        end: "July 2017",
-        isJob: true,
-        content:
-          "Supported media and teaching technology in classrooms across the entire campus. Assisted IT staff with setup and installation of multimedia equipment in classrooms."
-      },
-      bar: {
-        title: "Barstow Community College Performing Arts Center",
-        position: "Sound and Lighting Technician",
-        src: require("../assets/bar.jpg"),
-        begin: "January 2015",
-        end: "July 2015",
-        isJob: true,
-        content:
-          "Primary sound technician for all purchased venue use. Provided assistance to college for internal venue use for college events and drama club performances."
-      }
+      work: work
     };
   }
 };

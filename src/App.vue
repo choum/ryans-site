@@ -61,6 +61,13 @@ export default {
   height: 60px !important;
 }
 
+::selection {
+  background: #35251c !important; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #35251c !important; /* Gecko Browsers */
+}
+
 html,
 body,
 #app {

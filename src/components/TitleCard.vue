@@ -2,7 +2,7 @@
   <md-card :id="id">
     <md-card-header class="md-display-2">
       <p>{{ title }}</p>
-      <md-icon>{{ icon }}</md-icon>
+      <md-icon @click.native="closePage()">{{ icon }}</md-icon>
     </md-card-header>
   </md-card>
 </template>
@@ -15,7 +15,14 @@ import "vue-material/dist/theme/default.css";
 Vue.use(VueMaterial);
 export default {
   name: "TitleCard",
-  props: ["title", "icon", "id"]
+  props: ["title", "icon", "id", "isPage"],
+  methods: {
+    closePage() {
+      if (this.isPage) {
+        this.$emit("passClose", null);
+      }
+    }
+  }
 };
 </script>
 

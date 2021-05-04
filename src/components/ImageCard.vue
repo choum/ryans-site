@@ -7,20 +7,22 @@
         </md-card-media>
         <md-card-area :class="{ largerCard: isJob }">
           <md-card-header>
-            <md-button
-              :href="link"
-              v-if="isJob === false && isHidden === false"
-              class="md-icon-button md-raised link md-accent"
-              md-ripple="false"
-            >
-              <md-icon>launch</md-icon>
-            </md-button>
             <p class="md-title">
               {{ title }}
             </p>
             <span class="date" v-if="begin !== undefined && end !== undefined"
               >{{ begin }} - {{ end }}</span
             >
+            <md-button
+              :href="link"
+              v-if="isJob === false"
+              class="link"
+              :md-ripple="false"
+              @click.native="returnSummary()"
+              :project="title"
+            >
+              READ MORE
+            </md-button>
           </md-card-header>
         </md-card-area>
       </md-card-media-cover>
@@ -45,10 +47,10 @@ export default {
       };
     }
   },
-  data: function() {
-    return {
-      isHidden: true
-    };
+  methods: {
+    returnSummary() {
+      this.$emit("passSummary", this.title);
+    }
   }
 };
 </script>
@@ -104,11 +106,17 @@ i {
   color: #fff !important;
 }
 
+.link {
+  background-color: transparent !important;
+}
+.link:hover {
+  background-color: transparent !important;
+}
 .md-card-media {
   background-color: var(--color);
 }
-.link {
-  align-self: flex-end;
+.md-button-content {
+  color: black !important;
 }
 .date {
   font-style: italic;

@@ -20,7 +20,15 @@
               href="#work"
               style="color: #3f4238"
               class="md-list-item-text"
+              v-if="isSummary === null"
               >Work History</a
+            >
+            <span
+              v-smooth-scroll
+              style="color: #3f4238"
+              class="md-list-item-text"
+              v-if="isSummary !== null"
+              >Work History</span
             >
           </md-list-item>
           <md-list-item>
@@ -30,16 +38,31 @@
               href="#projects"
               style="color: #3f4238"
               class="md-list-item-text"
+              v-if="isSummary === null"
               >Projects</a
+            >
+            <span
+              v-smooth-scroll
+              style="color: #3f4238"
+              class="md-list-item-text"
+              v-if="isSummary !== null"
+              >Projects</span
             >
           </md-list-item>
         </md-list>
         <SocialLinks />
       </md-card>
     </div>
-    <div class="md-layout-item">
+    <div class="md-layout-item downmove" id="homeRow" v-if="isSummary === null">
       <WorkRow />
-      <ProjectRow />
+      <ProjectRow v-on:setSummary="setSummary" />
+    </div>
+    <div class="md-layout-item" v-if="isSummary !== null">
+      <ProjectSummary
+        :projectName="isSummary"
+        :json="getJsonObj(isSummary)"
+        @setClose="setClose"
+      />
     </div>
   </div>
 </template>
@@ -49,16 +72,42 @@ import Vue from "vue";
 import VueMaterial from "vue-material";
 import SocialLinks from "./SocialLinks.vue";
 import WorkRow from "./WorkRow.vue";
+import ProjectSummary from "./ProjectSummary.vue";
 import ProjectRow from "./ProjectRow.vue";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
 import VueSmoothScroll from "vue2-smooth-scroll";
+import project from "../json/projectDescription.json";
 Vue.use(VueSmoothScroll);
 Vue.use(VueMaterial);
 
 export default {
   name: "Content",
-  components: { SocialLinks, WorkRow, ProjectRow }
+  components: { SocialLinks, WorkRow, ProjectRow, ProjectSummary },
+  data: function() {
+    return {
+      isSummary: null,
+      project: project
+    };
+  },
+  methods: {
+    setSummary(value) {
+      window.scrollTo(0, 0);
+      this.isSummary = value;
+    },
+    setClose(value) {
+      this.isSummary = value;
+    },
+    getJsonObj(name) {
+      if (name === "Embedded Lighting Controller") {
+        return project.elc;
+      } else if (name === "Project Lite") {
+        return project.pl;
+      } else if (name === "SVHS School Timer") {
+        return project.time;
+      }
+    }
+  }
 };
 </script>
 
@@ -152,5 +201,19 @@ i {
 
 a:hover {
   color: red;
+}
+.downmove {
+  -webkit-animation-name: downmove; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+  animation-name: downmove;
+  animation-duration: 0.5s;
+}
+@-webkit-keyframes downmove {
+  0% {
+    margin: -300px 0 0 0;
+  }
+  100% {
+    margin: 0px 0 0 0;
+  }
 }
 </style>
