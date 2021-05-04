@@ -90,6 +90,9 @@ export default {
     margin-left: 1em;
     margin-right: 1em;
   }
+  #info {
+    margin-bottom: 1em;
+  }
 }
 .md-avatar {
   min-width: 175px !important;
