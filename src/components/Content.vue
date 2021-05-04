@@ -1,6 +1,6 @@
 <template>
   <div class="md-layout md-gutter" id="wrapper">
-    <div class="md-layout-item md-size-25">
+    <div class="md-layout-item md-size-30 md-small-size-100 md-xsmall-size-100">
       <md-card id="info">
         <md-card-header>
           <div id="icon">
@@ -74,6 +74,22 @@ export default {
   margin-top: 2em;
   margin-left: 5em;
   margin-right: 5em;
+}
+
+@media (max-width: 768px) {
+  #wrapper {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  #info {
+    margin-bottom: 1em;
+  }
+}
+@media (max-width: 1024px) {
+  #wrapper {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
 }
 .md-avatar {
   min-width: 175px !important;

@@ -29,8 +29,8 @@ export default {
 .md-title {
   font-weight: bold;
   color: var(--black-olive);
-  margin-top: 0px !important;
   text-decoration: underline;
+  margin-bottom: 0.5em;
 }
 .md-card-header {
   width: 100%;

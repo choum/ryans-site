@@ -3,7 +3,7 @@
     <TitleCard title="Projects" icon="code" id="projects" />
     <div class="md-layout md-gutter md-alignment-center">
       <div class="join md-layout-item  md-layout md-gutter">
-        <div class="md-layout-item md-size-40 img">
+        <div class="md-layout-item md-size-40 md-small-size-100 img">
           <ImageCard
             :title="elc.title"
             :src="elc.src"
@@ -19,7 +19,7 @@
     </div>
     <div class="md-layout md-gutter md-alignment-center">
       <div class="join md-layout-item  md-layout md-gutter">
-        <div class="md-layout-item md-size-40 img">
+        <div class="md-layout-item md-size-40 md-small-size-100 img">
           <ImageCard
             :title="pl.title"
             :src="pl.src"
@@ -35,7 +35,7 @@
     </div>
     <div class="md-layout md-gutter md-alignment-center">
       <div class="join md-layout-item  md-layout md-gutter">
-        <div class="md-layout-item md-size-40 img">
+        <div class="md-layout-item md-size-40 md-small-size-100 img">
           <ImageCard :title="time.title" :src="time.src" />
         </div>
         <div class="md-layout-item txt">

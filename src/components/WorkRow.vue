@@ -3,7 +3,7 @@
     <TitleCard title="Work" icon="work" id="work" />
     <div class="md-layout md-gutter md-alignment-center">
       <div class="join md-layout-item  md-layout md-gutter">
-        <div class="md-layout-item  md-size-40 img">
+        <div class="md-layout-item  md-size-40 md-small-size-100 img">
           <ImageCard
             :title="jpl.title"
             :src="jpl.src"
@@ -18,11 +18,11 @@
       </div>
     </div>
     <div class="md-layout md-gutter md-alignment-center">
-      <div class="join md-layout-item  md-layout md-gutter">
+      <div class="join md-layout-item  md-layout md-gutter reverse">
         <div class="md-layout-item txt">
           <TextCard :content="cpp1.content" :position="cpp1.position" />
         </div>
-        <div class="md-layout-item md-size-40 img">
+        <div class="md-layout-item md-size-40 md-small-size-100 img">
           <ImageCard
             :title="cpp1.title"
             :src="cpp1.src"
@@ -35,7 +35,7 @@
     </div>
     <div class="md-layout md-gutter md-alignment-center">
       <div class="join md-layout-item  md-layout md-gutter">
-        <div class="md-layout-item md-size-40 img">
+        <div class="md-layout-item md-size-40 md-small-size-100 img">
           <ImageCard
             :title="cpp2.title"
             :src="cpp2.src"
@@ -50,11 +50,11 @@
       </div>
     </div>
     <div class="md-layout md-gutter md-alignment-center">
-      <div class="join md-layout-item  md-layout md-gutter">
+      <div class="join md-layout-item  md-layout md-gutter reverse">
         <div class="md-layout-item txt">
           <TextCard :content="bar.content" :position="bar.position" />
         </div>
-        <div class="md-layout-item  md-size-40 img">
+        <div class="md-layout-item  md-size-40 md-small-size-100 img">
           <ImageCard
             :title="bar.title"
             :src="bar.src"
@@ -145,5 +145,11 @@ export default {
 .join .md-card {
   padding: 0;
   margin: 0;
+}
+@media (max-width: 768px) {
+  .reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 </style>
